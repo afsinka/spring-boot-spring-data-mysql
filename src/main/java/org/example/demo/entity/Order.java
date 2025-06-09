@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,7 +20,7 @@ public class Order {
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private UUID uuid;
 
-    private Date orderDate;
+    private LocalDateTime orderDate;
 
     @ManyToMany
     @JoinTable(
@@ -50,11 +50,11 @@ public class Order {
         this.uuid = uuid;
     }
 
-    public Date getOrderDate() {
+    public LocalDateTime getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(Date orderDate) {
+    public void setOrderDate(LocalDateTime orderDate) {
         this.orderDate = orderDate;
     }
 
